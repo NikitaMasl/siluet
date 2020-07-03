@@ -1,0 +1,225 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+$width: calc(100vw/1.15);
+$main-color: #777777;
+$secondary-color: #dcdcdc;
+
+.main-elements-width{
+    width: $width;
+    margin-left: auto !important;
+    margin-right: auto;
+}
+
+@keyframes rotation {
+    0% {
+        top: 10px;
+        right: 10px;
+        font-size: 25px;
+        transform:rotate(0deg);
+    }
+
+    50%{
+        top: 15px;
+        right: 15px;
+        font-size: 30px;
+        transform:rotate(1080deg);
+        color: red;
+    }
+    100% {
+        top: 10px;
+        right: 10px;
+        font-size: 25px;
+        transform:rotate(0deg);
+    }
+}
+
+body{
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    header{
+        @extend .main-elements-width;
+        border-bottom: 1px solid $main-color;
+        .header-col{
+            height: 108px;
+            background: $main-color;
+            text-align: right;
+            a{
+                color: white;
+                text-decoration: none;
+                transition: all .5s;
+                font-size: 14px;
+                &:hover{
+                    color: white;
+                    text-decoration: underline;
+                    font-size: 18px;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+    main{
+        @extend .main-elements-width;
+        border-bottom: 1px solid $main-color;
+        .container-fluid{
+            padding: 0 !important;
+            .main-row {
+                height: 100%;
+            }
+        }
+        aside{
+            position: relative;
+            color: white;
+            .top-block{
+                position: absolute;
+                div{
+                    min-height: 350px;
+                    background: $main-color;
+                    color: white;
+                    font-size: 14px;
+                    h6{
+                        font-weight: 1000;
+                    }
+                }
+            }
+            .bottom-block{
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                div{
+                    height: 150px;
+                    background: $main-color;
+                }
+            }
+        }
+        .first-section{
+            background: $secondary-color;
+            color: $main-color;
+            font-size: 14px;
+            line-height: 1.5rem;
+            h6{
+                font-weight: 1000;
+            }
+            ul{
+                margin-left: 3rem;
+                li{
+                    span{
+                        font-weight: 1000;
+                    }
+                }
+            }
+        }
+        section{
+            .cart-section{
+                div{
+                    background: $secondary-color;
+                    height: 160px;
+                    position: relative;
+                    transition: all .5s;
+                    i{
+                        position: absolute;
+                        color: black;
+                        font-size: 25px;
+                        top: 10px;
+                        right: 10px;
+                        transition: all .5s;
+                    }
+                    &:hover{
+                        cursor: pointer;
+                        transform: scale(1.05);
+                        border: 1px solid rgba(0,0,0,0.5);
+                        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+                        i{
+                            animation-name: rotation;
+                            animation-duration: 2s;
+                            animation-iteration-count: infinite;
+                            animation-timing-function: ease;
+                        }
+                    }
+                }
+            }
+        }
+        .bottom-section{
+            background: $secondary-color;
+            font-size: 14px;
+            line-height: 1.5rem;
+        }
+    }
+    footer{
+        @extend .main-elements-width;
+        .footer-col{
+            background: $main-color;
+            color: $secondary-color;
+            min-height: 180px;
+        }
+        .ten{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            line-height: 1.3rem;
+            font-size: 14px;
+            ul{
+                color:white;
+                list-style: none;
+                margin-right: 30px;
+            }
+        }
+        .midle-footer-block{
+            line-height: 1.3rem;
+            font-size: 14px;
+            ul{
+                margin-left: 20px;
+                color:white;
+                list-style: square; 
+            }
+        }
+        .eleven{
+            background: $main-color;
+            min-height: 80px;
+        }
+        .twelve{
+            background: $main-color;
+            height: 80px;
+            bottom: 0;
+            position: absolute;
+            width: 100%;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 900px){   
+    $width: calc(100vw/1.05) !important;
+    .main-elements-width{
+        width: $width;        
+    }
+    .bottom-section{
+        margin-top: 20px;
+        margin-right: 0;
+    }
+    .first-section, .top-block div, .bottom-section, .ten, .midle-footer-block {
+        font-size: 10px !important;
+    }
+    .row{
+        padding-right: 0!important;
+    }
+}

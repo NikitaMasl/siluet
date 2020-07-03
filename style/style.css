@@ -1,0 +1,211 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.main-elements-width, body footer, body main, body header {
+  width: calc(100vw/1.15);
+  margin-left: auto !important;
+  margin-right: auto;
+}
+
+@keyframes rotation {
+  0% {
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    transform: rotate(0deg);
+  }
+  50% {
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    transform: rotate(1080deg);
+    color: red;
+  }
+  100% {
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    transform: rotate(0deg);
+  }
+}
+body {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body header {
+  border-bottom: 1px solid #777777;
+}
+body header .header-col {
+  height: 108px;
+  background: #777777;
+  text-align: right;
+}
+body header .header-col a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.5s;
+  font-size: 14px;
+}
+body header .header-col a:hover {
+  color: white;
+  text-decoration: underline;
+  font-size: 18px;
+  transform: scale(1.1);
+}
+body main {
+  border-bottom: 1px solid #777777;
+}
+body main .container-fluid {
+  padding: 0 !important;
+}
+body main .container-fluid .main-row {
+  height: 100%;
+}
+body main aside {
+  position: relative;
+  color: white;
+}
+body main aside .top-block {
+  position: absolute;
+}
+body main aside .top-block div {
+  min-height: 350px;
+  background: #777777;
+  color: white;
+  font-size: 14px;
+}
+body main aside .top-block div h6 {
+  font-weight: 1000;
+}
+body main aside .bottom-block {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+body main aside .bottom-block div {
+  height: 150px;
+  background: #777777;
+}
+body main .first-section {
+  background: #dcdcdc;
+  color: #777777;
+  font-size: 14px;
+  line-height: 1.5rem;
+}
+body main .first-section h6 {
+  font-weight: 1000;
+}
+body main .first-section ul {
+  margin-left: 3rem;
+}
+body main .first-section ul li span {
+  font-weight: 1000;
+}
+body main section .cart-section div {
+  background: #dcdcdc;
+  height: 160px;
+  position: relative;
+  transition: all 0.5s;
+}
+body main section .cart-section div i {
+  position: absolute;
+  color: black;
+  font-size: 25px;
+  top: 10px;
+  right: 10px;
+  transition: all 0.5s;
+}
+body main section .cart-section div:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+body main section .cart-section div:hover i {
+  animation-name: rotation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+body main .bottom-section {
+  background: #dcdcdc;
+  font-size: 14px;
+  line-height: 1.5rem;
+}
+body footer .footer-col {
+  background: #777777;
+  color: #dcdcdc;
+  min-height: 180px;
+}
+body footer .ten {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  line-height: 1.3rem;
+  font-size: 14px;
+}
+body footer .ten ul {
+  color: white;
+  list-style: none;
+  margin-right: 30px;
+}
+body footer .midle-footer-block {
+  line-height: 1.3rem;
+  font-size: 14px;
+}
+body footer .midle-footer-block ul {
+  margin-left: 20px;
+  color: white;
+  list-style: square;
+}
+body footer .eleven {
+  background: #777777;
+  min-height: 80px;
+}
+body footer .twelve {
+  background: #777777;
+  height: 80px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  .main-elements-width, body header, body main, body footer {
+    width: calc(100vw/1.05) !important;
+  }
+
+  .bottom-section {
+    margin-top: 20px;
+    margin-right: 0;
+  }
+
+  .first-section, .top-block div, .bottom-section, .ten, .midle-footer-block {
+    font-size: 10px !important;
+  }
+
+  .row {
+    padding-right: 0 !important;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
